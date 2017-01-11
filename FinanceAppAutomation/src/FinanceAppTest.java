@@ -32,7 +32,7 @@ public class FinanceAppTest extends UiAutomatorTestCase {
 		//Output percentage comparisons to console
 		Log.d("Output", "Todays price of $" + wtwStockData[0] +
 				" is " + (wtwStockData[0]/wtwStockData[2] * 100) + "% lower than the 52 week high " +
-						"and is " + (wtwStockData[0]/wtwStockData[1] * 100) + "% higher than the 52 week low");
+				"and is " + (wtwStockData[0]/wtwStockData[1] * 100) + "% higher than the 52 week low");
 		
 		//Retrieve WDAY stock data
 		double[] wdayStockData = retrieveStockData("WDAY");
