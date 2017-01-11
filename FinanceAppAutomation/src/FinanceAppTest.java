@@ -25,21 +25,17 @@ public class FinanceAppTest extends UiAutomatorTestCase {
 		//Navigate to the home screen and load Finance app
 		getUiDevice().pressHome();
 		financeAppIcon.click();
-
 		
 		//Retrieve WTW stock data
 		double[] wtwStockData = retrieveStockData("WTW");
-		
 		
 		//Output percentage comparisons to console
 		Log.d("Output", "Todays price of $" + wtwStockData[0] +
 				" is " + (wtwStockData[0]/wtwStockData[2] * 100) + "% lower than the 52 week high " +
 						"and is " + (wtwStockData[0]/wtwStockData[1] * 100) + "% higher than the 52 week low");
-
 		
 		//Retrieve WDAY stock data
 		double[] wdayStockData = retrieveStockData("WDAY");
-
 		
 		//Output higher EPS between WTW and WDAY
 		Log.d("Output", "The higher EPS is " + Math.max(wtwStockData[3], wdayStockData[3]));
@@ -54,14 +50,12 @@ public class FinanceAppTest extends UiAutomatorTestCase {
 		searchIcon.click();
 		searchBar.setText(symbol);		
 		searchResult.click();
-		
-		
+				
 		//Store stock data
 		stockData[0] = Double.parseDouble(currentPrice.getText());
 		stockData[1] = Double.parseDouble(yearLow.getText());
 		stockData[2] = Double.parseDouble(yearHigh.getText());
 		stockData[3] = Double.parseDouble(eps.getText());
-
 		
 		return stockData;
 	}
